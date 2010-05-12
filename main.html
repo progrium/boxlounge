@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Box Lounge Demo</title>
+    <style type="text/css">
+      body { margin: 0px; padding: 20px; font-family: verdana; }
+      #screen { width: 100%; height: 100%; background-color: white; text-align: center;}
+      h1 { padding-top: 100px;}
+    </style>
+    <script type="text/javascript" src="/static/jquery.min.js"></script>
+    <script type="text/javascript">
+      function rnd(num) { return Math.floor(Math.random()*num); }
+      function changeColor() {
+        function colorByte() { return (rnd(128)+64).toString(16); }
+        color = colorByte() + colorByte() + colorByte();
+        $('body').css('background', '#'+color);
+        setTimeout(changeColor, 1000);
+      }
+      $(document).ready(function() {
+        changeColor();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="screen">
+    <h1>Box Lounge Demo</h1>
+    <form method="post">
+      <input type="submit" value="Enter a new Box Lounge" />
+    </form>
+    </div>
+  </body>
+</html>
